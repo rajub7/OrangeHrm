@@ -135,19 +135,19 @@ public class WebEventListner extends BasePage implements WebDriverEventListener 
 	@Override
 	public void beforeSwitchToWindow(String windowName, WebDriver driver) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("before switching to window :........."+windowName.toString());
 	}
 
 	@Override
 	public void afterSwitchToWindow(String windowName, WebDriver driver) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("after switching to window :........."+windowName.toString());
 	}
 
 	@Override
 	public void onException(Throwable throwable, WebDriver driver) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("on exception :........."+throwable.getMessage());
 	}
 
 	@Override

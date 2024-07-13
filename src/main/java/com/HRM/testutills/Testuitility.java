@@ -8,8 +8,8 @@ import com.HRM.Base.BasePage;
 
 public class Testuitility extends BasePage {
 
-	public static long pageload=15;
-	public static long impliciat=10; 
+	public static long pageload=5;
+	public static long impliciat=5; 
 	
 	public static void selectbootstrap(List<WebElement>opt,String value){
 		for (WebElement Element : opt) {

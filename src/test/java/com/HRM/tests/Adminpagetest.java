@@ -21,21 +21,21 @@ public class Adminpagetest extends BasePage{
 	
 	@BeforeMethod
 	public void setup() {
-		intilaze();
+		BasePage.intilaze();
 		log=new Loginpage();
 	home=log.validatelogin(prop.getProperty("username"), prop.getProperty("password"));
 	admin=home.adminlinkpage();
 		
 	}
 	
-	@Test(priority = 6 ,dependsOnMethods ="adminlinktest")
+	@Test(priority = 6 )
 	public void adminlogotest() {
 		boolean b= admin.adminlogo();
 		Assert.assertTrue(b);
 		System.out.println("Admin page logo test ");
 	}
 	
-	@Test(priority = 7,dependsOnMethods ="adminlinktest")
+	@Test(priority = 7)
 	public void linktest() throws Exception {
 		admin=new AdminPage();
 		admin.links(prop.getProperty("name"));

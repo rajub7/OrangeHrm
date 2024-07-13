@@ -6,30 +6,31 @@
   </listeners>
   <test thread-count="5" name="orange hrm test(failed)">
     <classes>
+      <class name="com.HRM.tests.LoginTest">
+        <methods>
+          <include name="validatetitletest"/>
+          <include name="logintest"/>
+          <include name="teardown"/>
+          <include name="validatelogotest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.HRM.tests.LoginTest -->
+      <class name="com.HRM.tests.Adminpagetest">
+        <methods>
+          <include name="linktest"/>
+          <include name="adminlogotest"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.HRM.tests.Adminpagetest -->
       <class name="com.HRM.tests.Homepagetest">
         <methods>
           <include name="setup"/>
           <include name="adminlinktest"/>
-          <include name="validatetitletest"/>
           <include name="validatehomepagelogo"/>
-          <include name="logintest"/>
           <include name="teardown"/>
-          <include name="validatelogotest"/>
         </methods>
       </class> <!-- com.HRM.tests.Homepagetest -->
-      <class name="com.HRM.tests.Adminpagetest">
-        <methods>
-          <include name="linktest"/>
-          <include name="adminlinktest"/>
-          <include name="adminlogotest"/>
-          <include name="validatetitletest"/>
-          <include name="validatehomepagelogo"/>
-          <include name="logintest"/>
-          <include name="setup"/>
-          <include name="validatelogotest"/>
-          <include name="teardown"/>
-        </methods>
-      </class> <!-- com.HRM.tests.Adminpagetest -->
     </classes>
   </test> <!-- orange hrm test(failed) -->
 </suite> <!-- Failed suite [orange hrm suite] -->

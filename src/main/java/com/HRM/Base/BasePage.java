@@ -1,8 +1,10 @@
+
 package com.HRM.Base;
 
 import java.io.FileInputStream;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -37,13 +39,14 @@ public class BasePage {
 	}
 	
 	
-	public static void intilaze() {
+	public static void intilaze()  {
 	String browsername=	prop.getProperty("browser");
 	
 	if(browsername.equalsIgnoreCase("Chrome")) {
 		ChromeOptions opt=new ChromeOptions();
 		opt.addArguments("--remote-allow-origins=*");
-		WebDriverManager.chromedriver().setup();
+	//	WebDriverManager.chromedriver().setup();;
+		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver-win64\\chromedriver.exe");
 		driver= new ChromeDriver(opt);
 	}
 	else if (browsername.equalsIgnoreCase("firefox")) {
@@ -58,8 +61,9 @@ public class BasePage {
 	
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
-	driver.manage().timeouts().pageLoadTimeout(Testuitility.pageload, TimeUnit.SECONDS);
-	driver.manage().timeouts().implicitlyWait(Testuitility.impliciat,TimeUnit.SECONDS);
+	
+		
+     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	driver.get(prop.getProperty("url"));
 		
 	}

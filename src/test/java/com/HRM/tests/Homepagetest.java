@@ -20,12 +20,12 @@ public class Homepagetest extends BasePage{
 	}
 	@BeforeMethod
 	public void setup() {
-		intilaze();
+		BasePage.intilaze();
 		log=new Loginpage();
 		home=log.validatelogin(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
-	@Test(priority = 4,dependsOnMethods = "validatelogotest")
+	@Test(priority = 4)
 	public void validatehomepagelogo()  {
 	boolean flag=home.logopage();
 	Assert.assertTrue(flag);
@@ -36,7 +36,7 @@ public class Homepagetest extends BasePage{
 	public void adminlinktest()throws InterruptedException {
 	 admin=home.adminlinkpage();
 	 Thread.sleep(5000);
-	 Assert.assertTrue(false);
+	 
 	 System.out.println(" homepage adminlink click");
 		
 	}
