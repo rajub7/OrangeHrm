@@ -29,7 +29,7 @@ public class BasePage {
 	public BasePage() {
 		prop=new Properties();
 		try {
-			FileInputStream ip=new FileInputStream("E:\\selineum.project\\selleniuminterviewquotions\\OrangeHrm\\src\\main\\java\\com\\HRM\\config\\config.propertyfile");
+			FileInputStream ip=new FileInputStream("E:\\selineum.project\\Git_OrangeHRM\\OrangeHrm\\src\\main\\java\\com\\HRM\\config\\config.propertyfile");
 			prop.load(ip);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
